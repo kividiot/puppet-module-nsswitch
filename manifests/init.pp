@@ -12,9 +12,20 @@
 # Should LDAP be used? Valid values are 'absent' and 'present'
 # - *Default*: 'absent'
 #
+# [*ensure_qas*]
+# Should QAS (Quest Authentication Services) be used?
+# Valid values are 'absent' and 'present'
+# - *Default*: 'absent'
+#
+# [*qas_nss_module*]
+# Name of NSS module to use for QAS
+# - *Default*: 'vas4'
+#
 class nsswitch (
-  $config_file = '/etc/nsswitch.conf',
-  $ensure_ldap = 'absent',
+  $config_file    = '/etc/nsswitch.conf',
+  $ensure_ldap    = 'absent',
+  $ensure_qas     = 'absent',
+  $qas_nss_module = 'vas4',
 ) {
 
   file { 'nsswitch_config_file':
