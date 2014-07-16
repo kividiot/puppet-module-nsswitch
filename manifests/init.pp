@@ -6,6 +6,7 @@ class nsswitch (
   $config_file    = '/etc/nsswitch.conf',
   $ensure_ldap    = 'absent',
   $ensure_vas     = 'absent',
+  $ensure_nis     = 'absent',
   $vas_nss_module = 'vas4',
 ) {
 
@@ -14,6 +15,8 @@ class nsswitch (
     'Valid values for ensure_ldap are \'absent\' and \'present\'.')
   validate_re($ensure_vas, '^(present|absent)$',
     'Valid values for ensure_vas are \'absent\' and \'present\'.')
+  validate_re($ensure_nis, '^(present|absent)$',
+    'Valid values for ensure_nis are \'absent\' and \'present\'.')
   validate_re($vas_nss_module, '^vas(3|4)$',
     'Valid values for vas_nss_module are \'vas3\' and \'vas4\'.')
 

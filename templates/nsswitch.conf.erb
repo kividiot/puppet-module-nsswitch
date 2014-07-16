@@ -1,7 +1,7 @@
 # This file is being maintained by Puppet.
 # DO NOT EDIT
 
-passwd:     files<% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %> <%= vas_nss_module %><% end %>
+passwd:     files<% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %> <%= vas_nss_module %><% end %><% if @ensure_nis == 'present' %> nis<% end %>
 shadow:     files<% if @ensure_ldap == 'present' %> ldap<% end %>
 group:      files<% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %> <%= vas_nss_module %><% end %>
 
