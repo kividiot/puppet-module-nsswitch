@@ -20,3 +20,4 @@ netgroup:   files<% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_v
 publickey:  files
 automount:  files<% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %> nis<% end %>
 aliases:    files
+<% if @operatingsystem == 'Solaris' %>ipnodes:    files<% end %>
